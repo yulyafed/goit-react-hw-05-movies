@@ -1,17 +1,21 @@
-import { Routes, Route} from 'react-router-dom';
-import { Home } from 'pages/Home';
-import { Movies } from 'pages/Movies';
-import { NotFound } from 'components/NotFound';
-import { MovieDetails } from 'pages/MovieDetails';
-import { Cast } from 'components/Cast';
-import { Reviews } from 'components/Reviews';
+import { Routes, Route } from 'react-router-dom';
+import { lazy } from 'react';
 import { Layout } from 'components/Layout';
+
+const createAsyncComponent = path => lazy(() => import(path));
+
+const Home = createAsyncComponent('pages/Home');
+const Movies = createAsyncComponent('pages/Movies');
+const MovieDetails = createAsyncComponent('pages/MovieDetails');
+const Cast = createAsyncComponent('components/Cast');
+const Reviews = createAsyncComponent('components/Reviews');
+const NotFound = createAsyncComponent('components/NotFound');
 
 export const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Layout />}>
-        <Route path="/" element={<Home />} />
+        <Route index element={<Home />} />
         <Route path="/movies" element={<Movies />} >
           <Route path="/movies/:movieId" element={<MovieDetails />} />
           <Route path="/movies/:movieId/cast" element={<Cast />} />

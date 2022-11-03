@@ -1,7 +1,12 @@
-import { useParams } from 'react-router-dom';
+import { BackLink } from 'components/BackLink';
+
 
 export const MovieDetails = () => {
-  const { movieId } = useParams();
-  return <div>Now showing product with id - {movieId}</div>;
+  
+  return (
+     < BackLink />
+     <Cast/>
+     <Reviews/>
+  );
 };
   
