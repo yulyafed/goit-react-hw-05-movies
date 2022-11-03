@@ -1,5 +1,14 @@
+import { MoviesList } from "components/MoviesList";
+import { SearchBox } from "components/SearchBox";
+
+
 export const Movies = () => { 
     return (
-        console.log()
+        <div>
+            <SearchBox />
+            <MoviesList />
+           
+        </div>
+
     )
 }
