@@ -1,4 +1,4 @@
-export const Movies = () => { 
+export const Cast = () => { 
     return (
         console.log()
     )

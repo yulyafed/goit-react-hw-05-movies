@@ -1,26 +1,25 @@
-import { Routes, Route, Link } from 'react-router-dom';
+import { Routes, Route} from 'react-router-dom';
 import { Home } from 'pages/Home';
 import { Movies } from 'pages/Movies';
-import { NotFound } from 'pages/NotFound';
+import { NotFound } from 'components/NotFound';
 import { MovieDetails } from 'pages/MovieDetails';
-import { Cast } from 'pages/Cast';
-import { Reviews } from 'pages/Reviews';
+import { Cast } from 'components/Cast';
+import { Reviews } from 'components/Reviews';
+import { Layout } from 'components/Layout';
 
 export const App = () => {
   return (
-    <div>
-      <nav>
-        <Link to="/">Home</Link>
-        <Link to="/about">Movies</Link>
-      </nav>
-      <Routes>
+    <Routes>
+      <Route path="/" element={<Layout />}>
         <Route path="/" element={<Home />} />
-        <Route path="/movies" element={<Movies />} />
-        <Route path="/movies/:movieId" element={<MovieDetails />} />
-        <Route path="/movies/:movieId/cast" element={<Cast />} />
-        <Route path="/movies/:movieId/reviews" element={<Reviews />} />
+        <Route path="/movies" element={<Movies />} >
+          <Route path="/movies/:movieId" element={<MovieDetails />} />
+          <Route path="/movies/:movieId/cast" element={<Cast />} />
+          <Route path="/movies/:movieId/reviews" element={<Reviews />} />            
+        </Route>
         <Route path="*" element={<NotFound />} />
-      </Routes>
-    </div>
+      </Route>
+    </Routes>
+    
   );
 };
