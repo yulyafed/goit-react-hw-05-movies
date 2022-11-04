@@ -1,17 +1,34 @@
-import { fetchTrendMovies } from "ApiService";
+import { fetchTrendMovies } from 'ApiService';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-export const Home =  () => {
+export function Home() {
+  const [trendmovies, setTrendMovies] = useState(null);
 
-  const TrendMovies = fetchTrendMovies();
-  // console.log(TrendMovies.data.results);
-  
+  useEffect(() => {
+    async function updateTrendMovies() {
+      const response = await fetchTrendMovies();
+      setTrendMovies(response.data.results);
+    }
+
+    updateTrendMovies();
+  }, []);
+
   return (
     <div>
-      {/* <ul>{response.data.results.map((movie) => { 
-        <li key={movie.id}>
-          <a href="">{ movie.title}</a>
-        </li>
-      })}</ul> */}
+      {trendmovies && (
+        <ul>
+          {trendmovies.map(movie => {
+            return (
+              <li>
+                <Link to={`movies/${movie.id}`}>
+                  {movie.title}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      )}
     </div>
   );
-};
+}
