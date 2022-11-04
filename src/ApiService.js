@@ -6,47 +6,47 @@ const LANG = 'en-US'
 
 const fetchTrendMovies = async () => {
     try {
-        const response = await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=${LANG}`);
-        } catch (err) {
-        console.error(error);
+        return await axios.get(`${BASE_URL}/trending/movie/day?api_key=${API_KEY}&language=${LANG}`);
+    } catch (err) {
+        console.log(err);
     }
-    return response;
+    return null;
 };
 
 const fetchSearchMovies = async (searchMovie) => {
     try {
-        const response = await axios.get(`${BASE_URL}/search/movie?api_key=${API_KEY}&language=${LANG}&query=${searchMovie}&include_adult=false`);
+        return await axios.get(`${BASE_URL}/search/movie?api_key=${API_KEY}&language=${LANG}&query=${searchMovie}&include_adult=false`);
     } catch (err) {
-        console.error(error);
+        console.log(err);
     }
-    return response;
+    return null;
 };
 
 const fetchMovieDetails = async (movieId) => {
     try {
-        const response = await axios.get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=${LANG}`);
+        return await axios.get(`${BASE_URL}/movie/${movieId}?api_key=${API_KEY}&language=${LANG}`);
     } catch (err) {
-        console.error(error);
+        console.log(err);
     }
-    return response;
+    return null;
 };
 
 const fetchMovieCredits = async (movieId) => {
     try {
-        const response = await axios.get(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=${LANG}`);
+        return await axios.get(`${BASE_URL}/movie/${movieId}/credits?api_key=${API_KEY}&language=${LANG}`);
     } catch (err) {
-        console.error(error);
+        console.log(err);
     }
-    return response;
+    return null;
 };
 
 const fetchMovieReviews = async (movieId) => {
     try {
-        const response = await axios.get(`${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=${LANG}`);
+        return await axios.get(`${BASE_URL}/movie/${movieId}/reviews?api_key=${API_KEY}&language=${LANG}`);
     } catch (err) {
-        console.error(error);
+        console.log(err);
     }
-    return response;
+    return null;
 };
 
 
