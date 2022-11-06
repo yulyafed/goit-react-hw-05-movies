@@ -14,6 +14,10 @@ export function Home() {
     updateTrendMovies();
   }, []);
 
-  return (<MoviesList movies={trendmovies} />
+  return (
+    <>
+      <h1>Trending today</h1>
+      <MoviesList movies={trendmovies} />
+    </>
   );
 }
