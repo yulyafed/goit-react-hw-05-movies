@@ -1,12 +1,17 @@
-export const SearchBox = ({ value, onChange }) => {
+export const SearchBox = ({ value, onSearchQueryChanged }) => {
+  const handleSubmit = e => {
+    e.preventDefault();
+    const form = e.currentTarget;
+    onSearchQueryChanged(form.elements.searchQuery.value);
+    form.reset();
+  };
+
   return (
-    <div>
-      <input
-        type="text"
-        value={value}
-        onChange={e => onChange(e.target.value)}
-          />
-          <button type="button">Search</button>
-    </div>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input type="text" name="searchQuery" defaultValue={value} />
+        <button type="submit">Search</button>
+      </form>
+    </>
   );
 };

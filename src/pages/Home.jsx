@@ -1,6 +1,6 @@
 import { fetchTrendMovies } from 'ApiService';
 import { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { MoviesList } from 'components/MoviesList';
 
 export function Home() {
   const [trendmovies, setTrendMovies] = useState(null);
@@ -14,21 +14,6 @@ export function Home() {
     updateTrendMovies();
   }, []);
 
-  return (
-    <div>
-      {trendmovies && (
-        <ul>
-          {trendmovies.map(movie => {
-            return (
-              <li>
-                <Link to={`movies/${movie.id}`}>
-                  {movie.title}
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      )}
-    </div>
+  return (<MoviesList movies={trendmovies} />
   );
 }

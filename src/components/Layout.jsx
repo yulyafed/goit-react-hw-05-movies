@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { MovieDetails } from 'pages/MovieDetails';
+import { Outlet } from 'react-router-dom';
 
 export const Layout = () => {
   return (
@@ -10,7 +11,7 @@ export const Layout = () => {
           <Link to="/movies">Movies</Link>
         </nav>
       </header>
-      <MovieDetails />
+      <Outlet />
     </div>
   );
 };
