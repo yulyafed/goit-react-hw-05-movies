@@ -5,11 +5,14 @@ import { SearchBox } from 'components/SearchBox';
 import { fetchSearchMovies } from 'ApiService';
 
 export function Movies() {
+
   const [searchmovies, setSearchMovies] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
-  const movieQuery = searchParams.get('q');
+
+  const movieQuery = searchParams.get('movieQuery');
 
   useEffect(() => {
+    
     async function UpdateSearchMovies(movieQuery) {
       const response = await fetchSearchMovies(movieQuery);
       setSearchMovies(response.data.results);
@@ -21,7 +24,7 @@ export function Movies() {
   }, [movieQuery]);
 
   const onSearchSubmit = query => {
-    setSearchParams({ q: query });
+    setSearchParams({ movieQuery: query });
   };
 
   return (

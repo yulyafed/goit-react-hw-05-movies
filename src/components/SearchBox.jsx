@@ -1,4 +1,5 @@
 export const SearchBox = ({ value, onSearchQueryChanged }) => {
+
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;

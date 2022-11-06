@@ -1,12 +1,13 @@
 import { Routes, Route } from 'react-router-dom';
 // import { lazy } from 'react';
-import { Movies } from 'pages/Movies';
 import { Home } from 'pages/Home';
-import { Layout } from 'components/Layout';
-import { NotFound } from 'components/NotFound';
+import { Movies } from 'pages/Movies';
 import { MovieDetails } from 'pages/MovieDetails';
+import { Layout } from 'components/Layout';
 import { Cast } from 'components/Cast';
 import { Reviews } from 'components/Reviews';
+import { NotFound } from 'components/NotFound';
+
 
 // const createAsyncComponent = path => lazy(() => import(path));
 
