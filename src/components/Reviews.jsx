@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 
-export const Reviews = () => {
-  return  <Link to="/movies/:movieId/reviews">Reviews</Link>;
+export const Reviews = ({ id }) => {
+  const link = `/movies/${id}/reviews`;
+  return <Link to={link}>Reviews</Link>;
 };
