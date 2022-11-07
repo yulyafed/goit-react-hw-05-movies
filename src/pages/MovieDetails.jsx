@@ -1,12 +1,11 @@
-import {  useLocation, useParams, Link} from 'react-router-dom';
-import { useState, useEffect, Suspense } from 'react';
+import { useLocation, useParams, Link } from 'react-router-dom';
+import { useState, useEffect, Suspense, Outlet } from 'react';
 import { BackLink } from 'components/BackLink';
 import { Reviews } from 'components/Reviews';
 import { Cast } from 'components/Cast';
 import { fetchMovieDetails } from 'ApiService';
 
-export const MovieDetails = () => {
-  
+export function MovieDetails() {
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/Home';
 
@@ -53,13 +52,13 @@ export const MovieDetails = () => {
         </div>
       )}
       <h2>Additional information</h2>
-      <Link to={linkCast}>Cast</Link>
-      <Link to={linkReview}>Reviews</Link>
+      <Link to='cast'>Cast</Link>
+      <Link to='reviews'>Reviews</Link>
       <Cast id={movieId} />
       <Reviews id={movieId} />
-      <Suspense fallback={<div>Loading page...</div>}>
+      {/* <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
-      </Suspense>
+      </Suspense> */}
     </div>
   );
-};
+}
