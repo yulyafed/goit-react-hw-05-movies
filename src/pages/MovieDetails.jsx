@@ -26,13 +26,14 @@ export const MovieDetails = () => {
   return (
     <div>
       <BackLink to={backLinkHref}>Go back</BackLink>
+      <h2>Additional information</h2>
       <Cast id={movieId} />
       <Reviews id={movieId} />
       {moviedetails && (
         <div>
           <img src={moviedetails.poster_path} alt="" />
           <h1>{moviedetails.original_title}({moviedetails.release_date})</h1>
-          <p>User Score:{Math.ceil(moviedetails.popularity)}%</p>
+          <p>User Score:{Math.ceil(moviedetails.popularity/10)}%</p>
           <h2>Overview</h2>
           <p>{moviedetails.overview}</p>
           <h3>Genres</h3>
