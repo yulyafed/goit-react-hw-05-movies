@@ -1,4 +1,4 @@
-import {  useLocation, useParams, Link } from 'react-router-dom';
+import {  useLocation, useParams, Link, Outlet } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { BackLink } from 'components/BackLink';
 import { Reviews } from 'components/Reviews';
@@ -31,9 +31,6 @@ export const MovieDetails = () => {
   return (
     <div>
       <BackLink to={backLinkHref}>Go back</BackLink>
-      <h2>Additional information</h2>
-      <Link to={linkCast}>Cast</Link>
-      <Link to={linkReview}>Reviews</Link>
       {moviedetails && (
         <div>
           <img src={posterBigUrlPrefix + moviedetails.poster_path} alt="" />
@@ -55,6 +52,9 @@ export const MovieDetails = () => {
           </ul>
         </div>
       )}
+      <h2>Additional information</h2>
+      <Link to={linkCast}>Cast</Link>
+      <Link to={linkReview}>Reviews</Link>
       <Cast id={movieId} />
       <Reviews id={movieId} />
     </div>
