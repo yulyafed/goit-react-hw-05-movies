@@ -10,7 +10,7 @@ export const BackLink = ({ to, children }) => {
     </Link>
   );
 };
-MoviesList.propTypes = {
+BackLink.propTypes = {
   to: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
 };
