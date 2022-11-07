@@ -13,7 +13,6 @@ export const Reviews = ({ id }) => {
     async function updateMovieReviews(id) {
       const response = await fetchMovieReviews(id);
       setMovieReviews(response.data);
-      console.log(response.data);
     }
     updateMovieReviews(id);
   }, [id]);
