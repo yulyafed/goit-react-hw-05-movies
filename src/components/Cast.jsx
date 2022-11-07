@@ -12,7 +12,7 @@ export const Cast = ({ id }) => {
     async function updateMovieCasts(id) {
       const response = await fetchMovieCredits(id);
       setMovieCasts(response.data);
-      console.log(response.data);
+      
     }
     updateMovieCasts(id);
   }, [id]);

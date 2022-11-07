@@ -17,7 +17,6 @@ export const MovieDetails = () => {
     async function updateMovieDetails(id) {
       const response = await fetchMovieDetails(id);
       setMovieDetails(response.data);
-      console.log(response.data);
     }
 
     updateMovieDetails(movieId);

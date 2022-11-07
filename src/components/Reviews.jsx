@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchMovieReviews } from 'ApiService';
+import { NotFound } from './NotFound';
 
 export const Reviews = ({ id }) => {
 
@@ -20,14 +21,14 @@ export const Reviews = ({ id }) => {
   return (
     <div>
       <Link to={link}>Reviews</Link>
-      {moviecasts && (
+      {moviereviews.total_results === 0 && <NotFound />}
+      {moviereviews && (
         <ul>
-          {moviecasts.cast.map(item => {
+          {moviereviews.results.map(item => {
             return (
               <li key={item.id}>
-                <img src={item.profile_path} alt="" />
-                <p> {item.original_name} </p>
-                <p>Character:{item.character}</p>
+                <p> Author:{item.author} </p>
+                <p>{item.content}</p>
               </li>
             );
           })}
