@@ -1,20 +1,16 @@
 import { Routes, Route } from 'react-router-dom';
-// import { lazy } from 'react';
-import { Home } from 'pages/Home';
-import { Movies } from 'pages/Movies';
-import { MovieDetails } from 'pages/MovieDetails';
+import { lazy } from 'react';
 import { Layout } from 'components/Layout';
-import { Cast } from 'components/Cast';
-import { Reviews } from 'components/Reviews';
 import { NotFound } from 'components/NotFound';
 
 
-// const createAsyncComponent = path => lazy(() => import(path));
+const createAsyncComponent = path => lazy(() => import(path));
 
-// const Home = createAsyncComponent('pages/Home');
-// const MovieDetails = createAsyncComponent('pages/MovieDetails');
-// const Cast = createAsyncComponent('components/Cast');
-// const Reviews = createAsyncComponent('components/Reviews');
+const Home = createAsyncComponent('pages/Home');
+const Movies = createAsyncComponent('pages/Movies');
+const MovieDetails = createAsyncComponent('pages/MovieDetails');
+const Cast = createAsyncComponent('components/Cast');
+const Reviews = createAsyncComponent('components/Reviews');
 
 export const App = () => {
   return (

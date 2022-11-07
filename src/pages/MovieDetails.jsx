@@ -1,5 +1,5 @@
-import {  useLocation, useParams, Link, Outlet } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import {  useLocation, useParams, Link} from 'react-router-dom';
+import { useState, useEffect, Suspense } from 'react';
 import { BackLink } from 'components/BackLink';
 import { Reviews } from 'components/Reviews';
 import { Cast } from 'components/Cast';
@@ -57,6 +57,9 @@ export const MovieDetails = () => {
       <Link to={linkReview}>Reviews</Link>
       <Cast id={movieId} />
       <Reviews id={movieId} />
+      <Suspense fallback={<div>Loading page...</div>}>
+        <Outlet />
+      </Suspense>
     </div>
   );
 };
