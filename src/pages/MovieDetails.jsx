@@ -1,5 +1,6 @@
 import { useLocation, useParams, Link } from 'react-router-dom';
 import { useState, useEffect, Suspense, Outlet } from 'react';
+import PropTypes from 'prop-types';
 import { BackLink } from 'components/BackLink';
 import { Reviews } from 'components/Reviews';
 import { Cast } from 'components/Cast';
@@ -56,9 +57,13 @@ export function MovieDetails() {
       <Link to='reviews'>Reviews</Link>
       <Cast id={movieId} />
       <Reviews id={movieId} />
-      {/* <Suspense fallback={<div>Loading page...</div>}>
+      <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
-      </Suspense> */}
+      </Suspense>
     </div>
   );
 }
+
+MovieDetails.propTypes = {
+    id: PropTypes.string.isRequired,
+};

@@ -1,5 +1,6 @@
-export const SearchBox = ({ value, onSearchQueryChanged }) => {
+import PropTypes from 'prop-types';
 
+export const SearchBox = ({ value, onSearchQueryChanged }) => {
   const handleSubmit = e => {
     e.preventDefault();
     const form = e.currentTarget;
@@ -15,4 +16,8 @@ export const SearchBox = ({ value, onSearchQueryChanged }) => {
       </form>
     </>
   );
+};
+
+SearchBox.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
 };

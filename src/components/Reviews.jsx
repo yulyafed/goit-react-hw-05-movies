@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { fetchMovieReviews } from 'ApiService';
 
 export const Reviews = ({ id }) => {
@@ -29,4 +30,7 @@ export const Reviews = ({ id }) => {
       )}
     </div>
   );
+};
+Reviews.propTypes = {
+  id: PropTypes.string.isRequired,
 };

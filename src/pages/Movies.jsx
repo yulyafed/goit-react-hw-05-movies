@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { MoviesList } from 'components/MoviesList';
 import { SearchBox } from 'components/SearchBox';
 import { fetchSearchMovies } from 'ApiService';
@@ -34,3 +35,9 @@ export function Movies() {
     </div>
   );
 }
+
+Movies.propTypes = {
+  movies: PropTypes.arrayOf(PropTypes.shape()).isRequired,
+  onSearchQueryChanged: PropTypes.func.isRequired,
+  value: PropTypes.string.isRequired,
+};

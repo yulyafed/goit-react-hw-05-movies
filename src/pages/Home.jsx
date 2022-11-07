@@ -3,7 +3,7 @@ import { fetchTrendMovies } from 'ApiService';
 import PropTypes from 'prop-types';
 import { MoviesList } from 'components/MoviesList';
 
-export default function Home() {
+export function Home() {
 
   const [trendmovies, setTrendMovies] = useState(null);
 
@@ -25,10 +25,9 @@ export default function Home() {
   );
 }
 
-// ImageGalleryBox.propTypes = {
-//   items: PropTypes.arrayOf(
-//     PropTypes.shape({
-//       id: PropTypes.number.isRequired,
-//     })
-//   ).isRequired,
-// };
+Home.propTypes = {
+  movies: PropTypes.arrayOf(
+    PropTypes.shape()
+  ).isRequired,
+};
+

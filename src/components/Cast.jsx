@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import PropTypes from 'prop-types';
 import { fetchMovieCredits } from 'ApiService';
 
 export const Cast = ({ id }) => {
@@ -37,3 +38,7 @@ export const Cast = ({ id }) => {
     </div>
   );
 }
+
+Cast.propTypes = {
+  id: PropTypes.string.isRequired,
+};
