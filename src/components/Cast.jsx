@@ -1,4 +1,3 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchMovieCredits } from 'ApiService';
 
@@ -6,9 +5,9 @@ export const Cast = ({ id }) => {
  
   const [moviecasts, setMovieCasts] = useState(null);
 
-  const link = `/movies/${id}/cast`;
+  const posterSmallUrlPrefix = 'https://image.tmdb.org/t/p/w200';
 
-  useEffect(() => {
+   useEffect(() => {
     async function updateMovieCasts(id) {
       const response = await fetchMovieCredits(id);
       setMovieCasts(response.data);
@@ -19,15 +18,14 @@ export const Cast = ({ id }) => {
 
   return (
     <div>
-      <Link to={link}>Cast</Link>
-      {moviecasts && (
+        {moviecasts && (
         <ul>
           {moviecasts.cast.map(item => {
             return (
               <li key={item.id}>
-                <img src={ item.profile_path} alt="" />
+                <img src={posterSmallUrlPrefix + item.profile_path} alt="" />
                 <p> {item.original_name} </p>
-                <p>Character:{ item.character}</p>
+                <p>Character:{item.character}</p>
               </li>
             );
           })}

@@ -1,26 +1,21 @@
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { fetchMovieReviews } from 'ApiService';
-import { NotFound } from './NotFound';
 
 export const Reviews = ({ id }) => {
 
   const [moviereviews, setMovieReviews] = useState(null);
 
-  const link = `/movies/${id}/reviews`;
-
-  useEffect(() => {
+    useEffect(() => {
     async function updateMovieReviews(id) {
       const response = await fetchMovieReviews(id);
       setMovieReviews(response.data);
+      console.log(response.data);
     }
     updateMovieReviews(id);
   }, [id]);
 
   return (
     <div>
-      <Link to={link}>Reviews</Link>
-      {moviereviews.total_results === 0 && <NotFound />}
       {moviereviews && (
         <ul>
           {moviereviews.results.map(item => {
