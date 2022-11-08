@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { fetchTrendMovies } from 'ApiService';
-import PropTypes from 'prop-types';
 import { MoviesList } from 'components/MoviesList';
 
 export function Home() {
