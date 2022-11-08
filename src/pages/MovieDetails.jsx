@@ -7,7 +7,7 @@ import { fetchMovieDetails } from 'ApiService';
 
 export function MovieDetails() {
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/Home';
+  const backLinkHref = location.state?.from ?? '/';
 
   const { movieId } = useParams();
 
