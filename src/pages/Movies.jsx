@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { MoviesList } from 'components/MoviesList';
 import { SearchBox } from 'components/SearchBox';
 import { fetchSearchMovies } from 'ApiService';
