@@ -1,6 +1,5 @@
-import { useLocation, useParams, Link } from 'react-router-dom';
-import { useState, useEffect, Suspense, Outlet } from 'react';
-import PropTypes from 'prop-types';
+import { useLocation, useParams, Link, Outlet } from 'react-router-dom';
+import { useState, useEffect, Suspense } from 'react';
 import { BackLink } from 'components/BackLink';
 import { Reviews } from 'components/Reviews';
 import { Cast } from 'components/Cast';
