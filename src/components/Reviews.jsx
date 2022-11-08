@@ -31,6 +31,3 @@ export const Reviews = ({ id }) => {
     </div>
   );
 };
-Reviews.propTypes = {
-  id: PropTypes.string.isRequired,
-};

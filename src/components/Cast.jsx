@@ -38,7 +38,3 @@ export const Cast = ({ id }) => {
     </div>
   );
 }
-
-Cast.propTypes = {
-  id: PropTypes.string.isRequired,
-};

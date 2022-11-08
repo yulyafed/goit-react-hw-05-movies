@@ -18,6 +18,3 @@ export const MoviesList = ({ movies }) => {
     </div>
   );
 };
-MoviesList.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-};

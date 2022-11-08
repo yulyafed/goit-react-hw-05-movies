@@ -60,7 +60,3 @@ export function MovieDetails() {
     </div>
   );
 }
-
-MovieDetails.propTypes = {
-    id: PropTypes.string.isRequired,
-};

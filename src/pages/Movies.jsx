@@ -35,9 +35,3 @@ export function Movies() {
     </div>
   );
 }
-
-Movies.propTypes = {
-  movies: PropTypes.arrayOf(PropTypes.shape()).isRequired,
-  onSearchQueryChanged: PropTypes.func.isRequired,
-  value: PropTypes.string.isRequired,
-};

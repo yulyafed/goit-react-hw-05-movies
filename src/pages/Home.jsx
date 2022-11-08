@@ -24,10 +24,3 @@ export function Home() {
     </>
   );
 }
-
-Home.propTypes = {
-  movies: PropTypes.arrayOf(
-    PropTypes.shape()
-  ).isRequired,
-};
-
