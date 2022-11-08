@@ -16,8 +16,8 @@ export function MovieDetails() {
 
   const posterBigUrlPrefix = 'https://image.tmdb.org/t/p/w500';
 
-  const linkCast = `/movies/${movieId}/cast`;
-  const linkReview = `/movies/${movieId}/reviews`;
+  const linkCast = `movies/${movieId}/cast`;
+  const linkReview = `movies/${movieId}/reviews`;
 
   useEffect(() => {
     async function updateMovieDetails(id) {
