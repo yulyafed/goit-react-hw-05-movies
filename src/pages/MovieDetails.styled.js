@@ -43,9 +43,10 @@ export const TitleSecond = styled.h1`
   font-size:18px;
   font-weight:400;
   margin-top: 20px;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
 `;
 export const ListNext = styled.ul`
 border-bottom: 1px solid #2a363b;
+padding-bottom: 20px;
  
 `;

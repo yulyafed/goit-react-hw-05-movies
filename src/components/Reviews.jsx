@@ -15,12 +15,15 @@ export const Reviews = ({ id }) => {
 
   return (
     <div>
+     
       {moviereviews && (
         <ul>
           {moviereviews.results.map(item => {
             return (
               <li key={item.id}>
-                <p> Author:{item.author} </p>
+                <b>
+                  <p> Author: {item.author} </p>
+                </b>
                 <p>{item.content}</p>
               </li>
             );

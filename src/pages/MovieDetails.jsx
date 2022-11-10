@@ -1,8 +1,8 @@
 import { useLocation, useParams, Link, Outlet } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
 import { BackLink } from 'components/BackLink';
-import { Reviews } from 'components/Reviews';
-import { Cast } from 'components/Cast';
+// import { Reviews } from 'components/Reviews';
+// import { Cast } from 'components/Cast';
 import { fetchMovieDetails } from 'ApiService';
 import {
   Box,
@@ -66,13 +66,12 @@ export function MovieDetails() {
       <ListNext>
         <li>
           <Link to="cast">Cast</Link>
-          <Cast id={movieId} />
         </li>
         <li>
           <Link to="reviews">Reviews</Link>
-          <Reviews id={movieId} />
         </li>
       </ListNext>
+      
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
       </Suspense>

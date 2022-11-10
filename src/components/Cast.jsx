@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { fetchMovieCredits } from 'ApiService';
+import { Image } from 'components/Cast.styled';
 
 export const Cast = ({ id }) => {
  
@@ -19,13 +20,18 @@ export const Cast = ({ id }) => {
 
   return (
     <div>
-        {moviecasts && (
+     
+     
+      {moviecasts && (
         <ul>
           {moviecasts.cast.map(item => {
             return (
               <li key={item.id}>
                 {item.profile_path !== null && (
-                  <img src={posterSmallUrlPrefix + item.profile_path} alt="" />
+                  <Image
+                    src={posterSmallUrlPrefix + item.profile_path}
+                    alt=""
+                  />
                 )}
                 <p> {item.original_name} </p>
                 <p>Character: {item.character}</p>

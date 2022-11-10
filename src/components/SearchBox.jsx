@@ -1,5 +1,3 @@
-import PropTypes from 'prop-types';
-
 export const SearchBox = ({ value, onSearchQueryChanged }) => {
   const handleSubmit = e => {
     e.preventDefault();
@@ -18,6 +16,3 @@ export const SearchBox = ({ value, onSearchQueryChanged }) => {
   );
 };
 
-SearchBox.propTypes = {
-  onSubmit: PropTypes.func.isRequired,
-};
