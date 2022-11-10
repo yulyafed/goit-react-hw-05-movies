@@ -1,21 +1,23 @@
 import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from 'ApiService';
 
-export const Reviews = ({ id }) => {
+export const Reviews = () => {
 
   const [moviereviews, setMovieReviews] = useState(null);
 
+  const { movieId } = useParams();
+
     useEffect(() => {
-    async function updateMovieReviews(id) {
-      const response = await fetchMovieReviews(id);
-      setMovieReviews(response.data);
-    }
-    updateMovieReviews(id);
-  }, [id]);
+      async function updateMovieReviews(id) {
+        const response = await fetchMovieReviews(id);
+        setMovieReviews(response.data);
+      }
+      updateMovieReviews(movieId);
+    }, [movieId]);
 
   return (
     <div>
-     
       {moviereviews && (
         <ul>
           {moviereviews.results.map(item => {
@@ -30,6 +32,7 @@ export const Reviews = ({ id }) => {
           })}
         </ul>
       )}
+      {!moviereviews && <p>No reviews</p>}
     </div>
   );
 };

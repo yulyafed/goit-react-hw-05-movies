@@ -1,22 +1,24 @@
 import { useState, useEffect } from 'react';
+import {useParams} from 'react-router-dom';
 import { fetchMovieCredits } from 'ApiService';
 import { Image } from 'components/Cast.styled';
 
-export const Cast = ({ id }) => {
+export const Cast = () => {
  
   const [moviecasts, setMovieCasts] = useState(null);
 
   const posterSmallUrlPrefix = 'https://image.tmdb.org/t/p/w200';
 
+  const { movieId } = useParams();
+
    useEffect(() => {
-    async function updateMovieCasts(id) {
-      const response = await fetchMovieCredits(id);
-      setMovieCasts(response.data);
-      console.log(response.data);
-      
-    }
-    updateMovieCasts(id);
-  }, [id]);
+     async function updateMovieCasts(id) {
+       const response = await fetchMovieCredits(id);
+       setMovieCasts(response.data);
+       console.log(response.data);
+     }
+     updateMovieCasts(movieId);
+   }, [movieId]);
 
   return (
     <div>

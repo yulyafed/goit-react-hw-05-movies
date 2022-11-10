@@ -65,12 +65,14 @@ export function MovieDetails() {
       <TitleSecond>Additional information</TitleSecond>
       <ListNext>
         <li>
-          <Link to="cast" id={movieId}>
+          <Link to="cast" >
             Cast
           </Link>
         </li>
         <li>
-          <Link to="reviews">Reviews</Link>
+          <Link to="reviews">
+            Reviews
+          </Link>
         </li>
       </ListNext>
 
