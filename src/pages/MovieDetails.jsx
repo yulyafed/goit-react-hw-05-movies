@@ -65,13 +65,15 @@ export function MovieDetails() {
       <TitleSecond>Additional information</TitleSecond>
       <ListNext>
         <li>
-          <Link to="cast">Cast</Link>
+          <Link to="cast" id={movieId}>
+            Cast
+          </Link>
         </li>
         <li>
           <Link to="reviews">Reviews</Link>
         </li>
       </ListNext>
-      
+
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
       </Suspense>
