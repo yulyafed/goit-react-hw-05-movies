@@ -21,8 +21,7 @@ export const Cast = () => {
    }, [movieId]);
 
   return (
-    <div>
-         
+    <div>       
       {moviecasts && (
         <ul>
           {moviecasts.cast.map(item => {

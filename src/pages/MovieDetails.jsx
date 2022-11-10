@@ -1,8 +1,6 @@
 import { useLocation, useParams, Link, Outlet } from 'react-router-dom';
 import { useState, useEffect, Suspense } from 'react';
 import { BackLink } from 'components/BackLink';
-// import { Reviews } from 'components/Reviews';
-// import { Cast } from 'components/Cast';
 import { fetchMovieDetails } from 'ApiService';
 import {
   Box,
@@ -18,6 +16,7 @@ import {
 } from 'pages/MovieDetails.styled';
 
 export function MovieDetails() {
+  
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';
 

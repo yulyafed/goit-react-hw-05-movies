@@ -28,6 +28,7 @@ export const TitleNext = styled.h3`
   margin-top: 40px;
   margin-bottom: 20px;
 `;
+
 export const List = styled.ul`
 list-style: none;
 display: flex;
@@ -45,6 +46,7 @@ export const TitleSecond = styled.h1`
   margin-top: 20px;
   margin-bottom: 15px;
 `;
+
 export const ListNext = styled.ul`
 border-bottom: 1px solid #2a363b;
 padding-bottom: 20px;
