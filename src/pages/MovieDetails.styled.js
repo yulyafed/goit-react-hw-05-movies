@@ -48,5 +48,9 @@ export const TitleSecond = styled.h1`
 export const ListNext = styled.ul`
 border-bottom: 1px solid #2a363b;
 padding-bottom: 20px;
- 
 `;
+
+export const LiNext = styled.li`
+padding-bottom: 10px;
+`;
+ 

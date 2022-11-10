@@ -14,6 +14,7 @@ import {
   Li,
   TitleSecond,
   ListNext,
+  LiNext,
 } from 'pages/MovieDetails.styled';
 
 export function MovieDetails() {
@@ -64,11 +65,11 @@ export function MovieDetails() {
       )}
       <TitleSecond>Additional information</TitleSecond>
       <ListNext>
-        <li>
+        <LiNext>
           <Link to="cast" >
             Cast
           </Link>
-        </li>
+        </LiNext>
         <li>
           <Link to="reviews">
             Reviews
