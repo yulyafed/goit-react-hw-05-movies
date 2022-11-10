@@ -20,8 +20,7 @@ export const Cast = ({ id }) => {
 
   return (
     <div>
-     <Cast/>
-     
+         
       {moviecasts && (
         <ul>
           {moviecasts.cast.map(item => {
