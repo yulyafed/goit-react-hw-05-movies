@@ -4,6 +4,17 @@ import { BackLink } from 'components/BackLink';
 import { Reviews } from 'components/Reviews';
 import { Cast } from 'components/Cast';
 import { fetchMovieDetails } from 'ApiService';
+import {
+  Box,
+  Image,
+  Title,
+  TitleBottom,
+  TitleNext,
+  List,
+  Li,
+  TitleSecond,
+  ListNext,
+} from 'pages/MovieDetails.styled';
 
 export function MovieDetails() {
   const location = useLocation();
@@ -28,31 +39,40 @@ export function MovieDetails() {
     <div>
       <BackLink to={backLinkHref}>Go back</BackLink>
       {moviedetails && (
-        <div>
-          <img src={posterBigUrlPrefix + moviedetails.poster_path} alt="" />
-          <h1>
-            {moviedetails.original_title}({moviedetails.release_date})
-          </h1>
-          <p>User Score:{Math.ceil(moviedetails.popularity / 10)}%</p>
-          <h2>Overview</h2>
-          <p>{moviedetails.overview}</p>
-          <h3>Genres</h3>
-          <ul>
-            {moviedetails.genres.map(genre => {
-              return (
-                <li key={genre.id}>
-                  <p> {genre.name} </p>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
+        <Box>
+          <Image src={posterBigUrlPrefix + moviedetails.poster_path} alt="" />
+          <div>
+            <Title>
+              {moviedetails.original_title} (
+              {new Date(moviedetails.release_date).getFullYear()})
+            </Title>
+            <p>User Score: {Math.ceil(moviedetails.popularity / 10)}%</p>
+            <TitleBottom>Overview</TitleBottom>
+            <p>{moviedetails.overview}</p>
+            <TitleNext>Genres</TitleNext>
+            <List>
+              {moviedetails.genres.map(genre => {
+                return (
+                  <Li key={genre.id}>
+                    <p> {genre.name} </p>
+                  </Li>
+                );
+              })}
+            </List>
+          </div>
+        </Box>
       )}
-      <h2>Additional information</h2>
-      <Link to='cast'>Cast</Link>
-      <Link to='reviews'>Reviews</Link>
-      <Cast id={movieId} />
-      <Reviews id={movieId} />
+      <TitleSecond>Additional information</TitleSecond>
+      <ListNext>
+        <li>
+          <Link to="cast">Cast</Link>
+          <Cast id={movieId} />
+        </li>
+        <li>
+          <Link to="reviews">Reviews</Link>
+          <Reviews id={movieId} />
+        </li>
+      </ListNext>
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
       </Suspense>

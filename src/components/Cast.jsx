@@ -28,7 +28,7 @@ export const Cast = ({ id }) => {
                   <img src={posterSmallUrlPrefix + item.profile_path} alt="" />
                 )}
                 <p> {item.original_name} </p>
-                <p>Character:{item.character}</p>
+                <p>Character: {item.character}</p>
               </li>
             );
           })}

@@ -1,15 +1,28 @@
-import { Link, Outlet } from 'react-router-dom';
+import {  Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
+import { Head, Nav } from 'components/Layout.styled';
+
+let active = {
+  color: '#2196f3',
+};
 
 export const Layout = () => {
   return (
     <div>
-      <header>
+      <Head>
         <nav>
-          <Link to="/">Home</Link>
-          <Link to="/movies">Movies</Link>
+          <Nav
+            to="/"
+            style={({ isActive }) => (isActive ? active : undefined)} >
+            Home
+          </Nav>
+          <Nav
+            to="/movies"
+            style={({ isActive }) => (isActive ? active : undefined)} >
+            Movies
+          </Nav>
         </nav>
-      </header>
+      </Head>
       <Suspense fallback={<div>Loading page...</div>}>
         <Outlet />
       </Suspense>
