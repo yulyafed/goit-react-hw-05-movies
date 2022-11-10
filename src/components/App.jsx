@@ -1,5 +1,5 @@
 import { Routes, Route } from 'react-router-dom';
-//import { lazy } from 'react';
+// import { lazy, Suspense } from 'react';
 import { Layout } from 'components/Layout';
 import { NotFound } from 'components/NotFound';
 import { Home } from 'pages/Home';
@@ -9,7 +9,7 @@ import { MovieDetails } from 'pages/MovieDetails';
 import { Cast } from 'components/Cast';
 import { Reviews } from 'components//Reviews';
 
-//const createAsyncComponent = (path) => lazy(() => import(path));
+// const createAsyncComponent = (path) => lazy(() => import(path));
 
 // const Home = createAsyncComponent('pages/Home');
 // const Movies = createAsyncComponent('pages/Movies');
@@ -19,6 +19,8 @@ import { Reviews } from 'components//Reviews';
 
 export const App = () => {
   return (
+
+    // <Suspense fallback={<div>Loading</div>}>
     <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<Home />} />
@@ -30,5 +32,6 @@ export const App = () => {
         <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
+    // </Suspense>
   );
 };
