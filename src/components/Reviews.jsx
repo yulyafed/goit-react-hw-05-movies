@@ -12,6 +12,7 @@ export const Reviews = () => {
       async function updateMovieReviews(id) {
         const response = await fetchMovieReviews(id);
         setMovieReviews(response.data);
+        console.log(response.data);
       }
       updateMovieReviews(movieId);
     }, [movieId]);
@@ -32,7 +33,9 @@ export const Reviews = () => {
           })}
         </ul>
       )}
-      {!moviereviews && <p>No reviews</p>}
+      {moviereviews === null && (
+        <p> We don't have any reviews for this movie</p>
+      )}
     </div>
   );
 };
