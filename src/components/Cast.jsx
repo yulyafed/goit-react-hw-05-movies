@@ -3,7 +3,7 @@ import {useParams} from 'react-router-dom';
 import { fetchMovieCredits } from 'ApiService';
 import { Image } from 'components/Cast.styled';
 
-export const Cast = () => {
+ export default function Cast () {
  
   const [moviecasts, setMovieCasts] = useState(null);
 
