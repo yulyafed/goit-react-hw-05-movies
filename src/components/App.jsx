@@ -8,13 +8,13 @@ import { NotFound } from 'components/NotFound';
 // import { Cast } from 'components/Cast';
 // import { Reviews } from 'components//Reviews';
 
-const createAsyncComponent = (path) => lazy(() => import(path));
+// const createAsyncComponent = (path) => lazy(() => import(path));
 
-const Home = createAsyncComponent('../pages/Home');
-const Movies = createAsyncComponent('../pages/Movies');
-const MovieDetails = createAsyncComponent('../pages/MovieDetails');
-const Cast = createAsyncComponent('./Cast');
-const Reviews = createAsyncComponent('./Reviews');
+const Home = lazy(() => import('../pages/Home'));
+const Movies = lazy(() => import('../pages/Movies'));
+const MovieDetails = lazy(() => import('../pages/MovieDetails'));
+const Cast = lazy(() => import('./Cast'));
+const Reviews = lazy(() => import('./Reviews'));
 
 export const App = () => {
   return (
