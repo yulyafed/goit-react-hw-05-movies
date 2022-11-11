@@ -15,7 +15,7 @@ import {
   LiNext,
 } from 'pages/MovieDetails.styled';
 
- export default function MovieDetails() {
+ export  function MovieDetails() {
   
   const location = useLocation();
   const backLinkHref = location.state?.from ?? '/';

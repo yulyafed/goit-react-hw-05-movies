@@ -4,7 +4,7 @@ import { MoviesList } from 'components/MoviesList';
 import { SearchBox } from 'components/SearchBox';
 import { fetchSearchMovies } from 'ApiService';
 
-export default function Movies() {
+export function Movies() {
 
   const [searchmovies, setSearchMovies] = useState(null);
   const [searchParams, setSearchParams] = useSearchParams();
