@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { fetchTrendMovies } from 'ApiService';
 import { MoviesList } from 'components/MoviesList';
 
- export  function Home () {
+ export  default function Home () {
 
   const [trendmovies, setTrendMovies] = useState(null);
 

@@ -2,29 +2,32 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { fetchMovieReviews } from 'ApiService';
 
- export function Reviews() {
+ export default function Reviews() {
 
-  const [moviereviews, setMovieReviews] = useState(null);
+   const [moviereviews, setMovieReviews] = useState({
+     data:  {results: []} ,
+   });
 
   const { movieId } = useParams();
 
     useEffect(() => {
       async function updateMovieReviews(id) {
         const response = await fetchMovieReviews(id);
-        setMovieReviews(response.data);
+        setMovieReviews(response);
         console.log(response.data);
       }
       updateMovieReviews(movieId);
     }, [movieId]);
-
+console.log(moviereviews);
   return (
+    
     <div>
-      {moviereviews === null && (
+      {moviereviews.data.results.length === 0  && (
         <p> We don't have any reviews for this movie</p>
       )}
       {moviereviews && (
         <ul>
-          {moviereviews.results.map(item => {
+          {moviereviews.data.results.map(item => {
             return (
               <li key={item.id}>
                 <b>
