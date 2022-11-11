@@ -19,6 +19,9 @@ export const Reviews = () => {
 
   return (
     <div>
+      {moviereviews === null && (
+        <p> We don't have any reviews for this movie</p>
+      )}
       {moviereviews && (
         <ul>
           {moviereviews.results.map(item => {
@@ -32,9 +35,6 @@ export const Reviews = () => {
             );
           })}
         </ul>
-      )}
-      {moviereviews === null && (
-        <p> We don't have any reviews for this movie</p>
       )}
     </div>
   );
