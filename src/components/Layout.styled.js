@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { Link} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Head = styled.header`
   max-width: 100%;
@@ -10,16 +10,20 @@ export const Head = styled.header`
   border-bottom: 1px solid #2a363b;
   box - shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 `; 
-export const Nav = styled(Link)`
+export const Link = styled(NavLink)`
   display: inline-block;
   text-decoration: none;
   font-weight: 700;
   font-size: 23px;
 
   margin-left:30px;
+  
+  color: black;
 
-  color: #2a363b;
-
+  &.active {
+    color: red;
+    text-decoration: underline;
+    }
    `;
 
  
