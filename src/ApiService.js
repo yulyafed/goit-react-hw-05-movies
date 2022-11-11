@@ -49,6 +49,4 @@ const fetchMovieReviews = async (movieId) => {
     return null;
 };
 
-
-
 export { fetchTrendMovies, fetchSearchMovies, fetchMovieDetails, fetchMovieCredits, fetchMovieReviews };
