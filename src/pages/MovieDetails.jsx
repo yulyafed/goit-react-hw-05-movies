@@ -18,7 +18,7 @@ import {
  export  default function MovieDetails() {
   
   const location = useLocation();
-  const backLinkHref = location.state?.from ?? '/';
+  const backLinkHref = location.state?.from ?? '/movies';
 
   const { movieId } = useParams();
 
