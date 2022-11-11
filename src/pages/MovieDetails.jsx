@@ -70,7 +70,7 @@ import {
           </Link>
         </LiNext>
         <li>
-          <Link to="reviews">
+          <Link to="reviews" >
             Reviews
           </Link>
         </li>

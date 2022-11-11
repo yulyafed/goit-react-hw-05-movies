@@ -21,7 +21,8 @@ export const Link = styled(NavLink)`
   color: black;
 
   &.active {
-    color: red;
+    color: red;}
+   &:hover {
     text-decoration: underline;
     }
    `;
