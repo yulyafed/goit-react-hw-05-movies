@@ -18,7 +18,7 @@ import { fetchMovieReviews } from 'ApiService';
       }
       updateMovieReviews(movieId);
     }, [movieId]);
-console.log(moviereviews);
+
   return (
     
     <div>
